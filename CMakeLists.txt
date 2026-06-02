@@ -17,6 +17,10 @@ set(SPI_MEM_SRCS
 	spi-mem/ch347/spi-mem.c
 )
 
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+	list(APPEND SPI_MEM_SRCS spi-mem/spi-mem-linux.c)
+endif()
+
 set(SPI_NAND_SRCS
 	spi-nand/core.c
 	spi-nand/gigadevice.c

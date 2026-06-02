@@ -9,3 +9,7 @@ struct spi_mem *serprog_probe(const char *devpath);
 void serprog_remove(struct spi_mem *mem);
 struct spi_mem *ch347_probe();
 void ch347_remove(struct spi_mem *mem);
+#ifdef __linux__
+struct spi_mem *linux_spi_probe(const char *drvarg);
+void linux_spi_remove(struct spi_mem *mem);
+#endif
